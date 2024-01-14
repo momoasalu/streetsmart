@@ -1,5 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Home";
+import City from "./City";
+
+
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -8,7 +11,8 @@ const Router = () => {
       element: <Home />
     }, 
     {
-      
+      path: "search/:name",
+      element: <City />
     }
   ])
 

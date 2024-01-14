@@ -1,5 +1,12 @@
 
 
+body {
+  padding: 2rem;
+  text-align: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 h2 {
   margin: 0;
 }
@@ -26,6 +33,9 @@ div.search {
   padding-top: 20px;
   position: relative;
   gap: 10px;
+  width: 60%;
+  margin: auto;
+  padding-bottom: 50px;
 }
 
 div.search-bar {
@@ -58,7 +68,9 @@ div.search button {
 }
 
 div.search-box {
-  width: 100%;
+  width: 96%;
+  position: absolute;
+  top: 75px;
 }
 
 div.search-box.empty {
@@ -93,6 +105,8 @@ div.search-box ul {
   grid-auto-flow: row;
   align-items: center;
   justify-content: stretch;
+  max-height: 150px;
+  overflow: scroll;
 }
 
 div.search-box ul:empty {
@@ -101,7 +115,6 @@ div.search-box ul:empty {
 
 div.features {
   width: 80vw;
-  background-color: green;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
@@ -111,11 +124,20 @@ div.features {
 
   div.feature {
     display: grid;
+    justify-items: center;
+    text-align: center;
     grid-auto-flow: row;
     border: 1px black solid;
+    border-radius: 50px;
     height: 200px;
     width: 200px;
+    position: relative;
   }
+
+div.feature p{
+  max-width: 60%;
+  font-size: 14px;
+}
 
 
 @media (max-width: 640px) {
@@ -127,6 +149,7 @@ div.features {
     margin: auto;
     width: 75vw;
     max-width: 600px;
+    padding-bottom: 20px;
   }
 
   div.features {
@@ -142,11 +165,19 @@ div.features {
 
   div.feature {
     grid-auto-flow: column;
+    grid-template-columns: 60px auto;
     height: 50px;
     width: 100%;
+    align-items: center;
+    justify-items: start;
   }
   
   img.icon {
     margin-bottom: 10px;
+  }
+  
+  div.feature p{
+    max-width: 80%;
+    font-size: 12px;
   }
 }

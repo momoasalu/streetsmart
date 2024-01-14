@@ -9,6 +9,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -23,7 +24,7 @@ body {
   display: flex;
   place-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
 }
 
 h1 {

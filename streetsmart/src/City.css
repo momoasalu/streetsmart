@@ -1,0 +1,175 @@
+
+html {
+  background-color: #e7ebdd;
+}
+
+section#overview {
+  width: 75vw;
+  margin: 0 auto;
+}
+
+section#overview div.top {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+section#overview button {
+  background-color: #2a4516;
+  color: #ffffff;
+  width: 280px;
+  height: 50px;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+
+section#overview h1 {
+  margin: 0;
+}
+
+section#overview #review-count {
+  font-size: 1.4rem;
+}
+
+section#overview #rating {
+  font-size: 4.5rem;
+}
+
+section#overview h1 {
+  font-size: 5rem;
+}
+
+div.summary {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+section#neighbourhood {
+  background-color: #e6e8cc;
+  color: #454444;
+  width: 100vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+section#neighbourhood p {
+  width: 80%;
+  margin: auto;
+}
+
+div.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.input select{
+  width: 30%;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+div.input h3{
+  font-size: 2rem;
+}
+
+div.view > div{
+  display: grid;
+  grid-auto-flow: column;
+  border: 1px black solid;
+  border-radius: 10px;
+  margin-left: 10vw;
+  gap: 50px;
+  margin-right: 10vw;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+div.safety-rating {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 100px auto;
+  align-items: stretch;
+  text-align: left;
+  margin: 20px;
+}
+
+div.safety-rating h5, 
+section#neighbourhood div.safety-rating p {
+  margin: 0;
+} 
+
+section#reviews p{
+  margin: auto;
+  text-align: left;
+}
+
+section#reviews > div {
+  width: 50vw;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 80px;
+  column-gap: 250px;
+  margin: 20px;
+  margin: auto;
+}
+
+@media (max-width: 640px) {
+  div.summary {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  section#overview div.top {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+  }
+  section#neighbourhood {
+    background-color: #e6e8cc;
+    color: #454444;
+  }
+
+  div.input select{
+    width: 60%;
+  }
+
+  div.view > div{
+    display: grid;
+    grid-auto-flow: row;
+    
+  }
+
+  div.safety-rating {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 100px auto;
+    align-items: stretch;
+    text-align: left;
+  }
+  
+  section#reviews > div {
+    width: 70vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 40px;
+  }
+
+  section#reviews div.review {
+    width: 70vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    background-color: #cfded7;
+    padding: 10px;
+
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-radius: 10px;
+  }
+}
