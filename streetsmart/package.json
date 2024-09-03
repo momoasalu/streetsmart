@@ -3,14 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https:/momoasalu.github.io/streetsmart",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "firebase": "^10.13.1",
+    "gh-pages": "^6.1.1",
     "leaflet": "^1.9.4",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
