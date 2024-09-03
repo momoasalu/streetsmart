@@ -1,7 +1,4 @@
-
-
 body {
-  padding: 2rem;
   text-align: center;
   max-width: 1280px;
   margin: 0 auto;
@@ -9,15 +6,15 @@ body {
 
 h2 {
   margin: 0;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 img.icon {
   width: 25vw;
-  margin-bottom: 30px;
 }
 
-
-input[type="text"] {
+div.search input[type="text"] {
   font-size: 16px;
 }
 
@@ -68,14 +65,19 @@ div.search button {
 }
 
 div.search-box {
-  width: 96%;
+  width: 75%;
   position: absolute;
   top: 75px;
+  background-color: white;
+  border-radius: 15px;
+  padding-right: 4px;
+  border: 1px solid black;
 }
 
 div.search-box.empty {
   border: none;
   background-color: transparent;
+  border: none;
 }
 
 div.search-box > ul > li {
@@ -87,6 +89,12 @@ div.search-box > ul > li {
   cursor: default;
 }
 
+div.search-box > ul > li > a {
+  width: 100%;
+  text-align: left;
+  color: black;
+}
+
 div.search-box > ul > li:hover {
   background-color: rgb(193, 193, 193);
 }
@@ -94,11 +102,9 @@ div.search-box > ul > li:hover {
 div.search-box ul {
   padding: 10px;
   border-radius: 15px;
-  border: 1px solid black;
   padding-left: 0;
   padding-right: 0;
   padding-top: 10px;
-  padding-bottom: 15px;
   margin: 0;
   list-style-type: none;
   display: grid;
@@ -113,13 +119,22 @@ div.search-box ul:empty {
   visibility: hidden;
 }
 
+form#city-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+}
+
 div.features {
-  width: 80vw;
+  width: 60%;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
   justify-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: 40px;
 }
 
   div.feature {
@@ -129,47 +144,61 @@ div.features {
     grid-auto-flow: row;
     border: 1px black solid;
     border-radius: 50px;
-    height: 200px;
-    width: 200px;
+    height: 175px;
+    width: 175px;
     position: relative;
   }
 
 div.feature p{
   max-width: 60%;
-  font-size: 14px;
+  font-size: 1rem;
+}
+
+div.feature img {
+  width: 40px;
+  align-self: self-end;
+  justify-self: center;
 }
 
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   img.icon {
     width: 65vw;
   }
 
   div.search {
     margin: auto;
-    width: 75vw;
+    width: 100vw;
     max-width: 600px;
     padding-bottom: 20px;
+    justify-self: center;
   }
 
+
   div.features {
-    width: 80%;
-    margin: auto;
+    position: relative;
+    width: 60%;
     display: grid;
+    flex-direction: column;
     grid-auto-flow: row;
-    align-items: center;
-    justify-content: stretch;
-    justify-items: stretch;
     gap: 20px;
+    justify-content: stretch;
   }
 
   div.feature {
     grid-auto-flow: column;
-    grid-template-columns: 60px auto;
-    height: 50px;
+    grid-template-columns: 65px auto;
+    height: 70px;
     width: 100%;
     align-items: center;
+    align-content: center;
     justify-items: start;
+  }
+
+  div.feature img {
+    width: 35px;
+    align-self: center;
+    justify-self: center;
   }
   
   img.icon {
@@ -178,6 +207,25 @@ div.feature p{
   
   div.feature p{
     max-width: 80%;
-    font-size: 12px;
+    font-size: 1rem;
+    text-align: left;
+    line-height: 100%;
   }
+}
+
+@media (max-width: 420px) {
+  div.features {
+    width: 80%;
+  }
+}
+
+@media (max-width: 640px) {
+  div.feature {
+    height: 50px;
+  }
+
+  div.feature img {
+    width: 30px;
+  }
+
 }

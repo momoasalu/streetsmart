@@ -3,9 +3,17 @@ html {
   background-color: #e7ebdd;
 }
 
+
+.leaflet-container {
+  height: 300px;
+  width: 100vw;
+  margin: 0;
+}
+
 section#overview {
   width: 75vw;
   margin: 0 auto;
+  margin-bottom: 10vh;
 }
 
 section#overview div.top {
@@ -38,6 +46,25 @@ section#overview #rating {
   font-size: 4.5rem;
 }
 
+section#overview .summary {
+  margin-top: 35px;
+}
+
+section#overview .summary h4 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+section#overview .summary p {
+  font-size: 2.8rem;
+  font-weight: 550;
+  margin: 0;
+}
+
+section#overview .summary img {
+  width: 75px;
+}
+
 section#overview h1 {
   font-size: 5rem;
 }
@@ -58,6 +85,12 @@ section#neighbourhood {
 section#neighbourhood p {
   width: 80%;
   margin: auto;
+}
+
+section#reviews {
+  background-color: #e6e8cc;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 div.input {
@@ -102,27 +135,355 @@ section#neighbourhood div.safety-rating p {
   margin: 0;
 } 
 
-section#reviews p{
+section#reviews div.comment{
   margin: auto;
   text-align: left;
 }
 
-section#reviews > div {
-  width: 50vw;
+section#reviews > div.reviews {
+  width: 60vw;
   display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: 250px 250px;
+  grid-template-rows: auto;
   gap: 80px;
-  column-gap: 250px;
-  margin: 20px;
+  column-gap: 15vw;
+  justify-content: center;
   margin: auto;
 }
 
+section#reviews > div.reviews div.rating {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(5, 10px);
+  grid-template-rows: auto;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 3px;
+}
+
+section#reviews > div.reviews div.rating div {
+  width: 10px;
+  height: 10px;
+  border-radius: 55%;
+  border: 1px solid black;
+}
+
+section#reviews > div.reviews h5 {
+  margin-bottom: 0;
+  margin-top: 12px;
+}
+
+section#reviews > div.reviews div.comment h5 {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: 550;
+}
+
+section#reviews > div.reviews div.review {
+  background-color: #007daf17;
+  border-radius: 15px;
+}
+
+section#reviews > div.reviews div.rating div.filled {
+  background-color: #007daf;
+}
+
+section#reviews > div.reviews div.comment {
+  margin: 20px 15px 0 ;
+  padding: 5px;
+  margin-bottom: 15px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+section#reviews > div.reviews div.comment p {
+  margin: 0 0 15px;
+}
+
+div.experience {
+  height: 100%;
+}
+
+div.select {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: center;
+  column-gap: 0.8rem;
+}
+
+form#add-review h3 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+div.select label {
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+  place-content: center;
+} 
+
+
+div.select > label > div {
+  font-size: 1rem;
+}
+
+div.select input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 2em;
+  height: 2em;
+  border: 0.15em solid;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+div.select input[type="radio"]::before {
+  content: '';
+  width: 1.75em;
+  height: 1.75em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: CanvasText;
+}
+
+div.select input[type="radio"].red::before {
+  box-shadow: inset 1.75em 1.75em #C81515;
+}
+
+div.select input[type="radio"].orange::before {
+  box-shadow: inset 1.75em 1.75em #fd6c3f;
+}
+
+div.select input[type="radio"].yellow::before {
+  box-shadow: inset 1.75em 1.75em #f3aa1a;
+}
+
+div.select input[type="radio"].green::before {
+  box-shadow: inset 1.75em 1.75em #b6e579;
+}
+
+div.select input[type="radio"].greener::before {
+  box-shadow: inset 1.75em 1.75em #00af1e;
+}
+
+div.select input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+div.no-reviews {
+  width: 300px;
+  margin: auto;
+}
+
+div.no-reviews h2 {
+  text-align: center;
+  font-size: 2.75rem;
+  line-height: 120%;
+  padding-bottom: 30px;
+}
+
+form#add-review {
+  width: 50vw;
+  margin: auto;
+  position: relative;
+}
+
+form#add-review .comment textarea {
+  width: 70%;
+  height: 200px;
+  padding: 20px;
+  font-size: 1rem;
+  resize: none;
+}
+
+form#add-review h3 {
+  margin-bottom: 5px;
+}
+
+form#add-review .experience {
+  margin-bottom: 3rem;
+}
+
+form#add-review p {
+  font-weight:500;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+dialog.add-review .buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: center;
+  gap: 35px;
+  margin-bottom: 20px;
+}
+
+dialog.add-review .buttons button {
+  width: 25vw;
+  height: 50px;
+  background-color: rgb(27, 31, 27);
+  color: white;
+}
+
+dialog.add-review h1 {
+  max-width: 70%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+dialog.add-review p.error {
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+
+dialog.add-review {
+  background-color: rgb(84, 93, 84);
+  color: white;
+  height: 80%;
+  border: none;
+  border-radius: 5px;
+}
+
+@media (min-width: 1024px) {
+  form#add-review {
+    width: 80vw;
+    position: relative;
+    display: grid;
+    column-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "experience comment"
+                          "buttons buttons";
+  }
+
+  form#add-review .experience p {
+    grid-area: 1 / span 2;
+  }
+
+  form#add-review h3 {
+    text-align: end;
+  }
+
+  form#add-review .experience {
+    width: 30vw;
+    grid-area: experience;
+    justify-self: end;
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: min-content 300px;
+    grid-template-rows: auto repeat(4, 100px);
+    align-items: center;
+  }
+
+  form#add-review .comment {
+    width: 30vw;
+    grid-area: comment;
+    justify-self: start;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+  }
+
+  form#add-review .comment textarea {
+    height: 70%;
+    align-self: center;
+    border-radius: 10px;
+    border: none;
+  }
+
+  form#add-review .buttons {
+    grid-area: buttons;
+  }
+
+  div.select input[type="radio"] {
+    width: 2em;
+    height: 2em;
+    border: 0.2em solid currentColor;
+  }
+  
+  div.select input[type="radio"]::before {
+    width: 2.5em;
+    height: 2.5em;
+    background-color: CanvasText;
+  }
+
+  div.select input[type="radio"].red::before {
+    box-shadow: inset 3em 3em #C81515;
+  }
+  
+  div.select input[type="radio"].orange::before {
+    box-shadow: inset 3em 3em #fd6c3f;
+  }
+  
+  div.select input[type="radio"].yellow::before {
+    box-shadow: inset 3em 3em #f3aa1a;
+  }
+  
+  div.select input[type="radio"].green::before {
+    box-shadow: inset 3em 3em #b6e579;
+  }
+  
+  div.select input[type="radio"].greener::before {
+    box-shadow: inset 3em 3em #00af1e;
+  }
+  
+  div.select input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+  div.select {
+    column-gap: 15px;
+    row-gap: 100px;
+    justify-content: center;
+  }
+
+  div.select > label {
+    row-gap: 5px;
+  }
+  
+  div.select > label > div {
+    font-size: 1rem;
+  }
+
+  form#add-review h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+  }
+
+  section#overview div.top div.name {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  section#overview div.top div.review {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+}
+
 @media (max-width: 640px) {
+  section#overview h1 {
+    font-size: 4.5rem;
+  }
+
   div.summary {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
+    gap: 40px;
   }
 
   section#overview div.top {
@@ -153,11 +514,14 @@ section#reviews > div {
     align-items: stretch;
     text-align: left;
   }
-  
-  section#reviews > div {
+
+  section#reviews {
+    width: 100vw;
+  }
+  section#reviews > div.reviews {
     width: 70vw;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto;
     gap: 40px;
   }
 
@@ -171,5 +535,16 @@ section#reviews > div {
     padding-bottom: 15px;
     padding-top: 15px;
     border-radius: 10px;
+  }
+}
+@media (max-width: 640px) {
+  section#overview h1 {
+    font-size: 3.5rem;
+  }
+
+  form#add-review {
+    width: 70vw;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }

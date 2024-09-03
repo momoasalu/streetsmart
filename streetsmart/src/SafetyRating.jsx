@@ -2,6 +2,9 @@ import Low from "./assets/Low.png"
 import High from "./assets/high.png"
 import Moderate from "./assets/moderate.png"
 
+import PropTypes from 'prop-types';
+
+
 const SafetyRating = ({ranking}) => {
   let icon;
   let label;
@@ -31,5 +34,8 @@ const SafetyRating = ({ranking}) => {
   )
 }
 
+SafetyRating.propTypes = {
+  ranking: PropTypes.number,
+}
 
 export default SafetyRating;

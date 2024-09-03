@@ -1,0 +1,172 @@
+header {
+  display: flex;
+  flex-direction: row;
+  height: 4rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(94, 47%, 21%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10000;
+  padding: 10px 20px;
+}
+
+header img {
+  height: 4rem;
+}
+
+header > div {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+header > div button {
+  padding: 10px 15px;
+  width: 100px;
+}
+
+header > div.logged-out {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+header button {
+  font-size: 1rem;
+  background-color: white;
+  color: hsl(94, 47%, 21%);
+  border-radius: 3px;
+  padding: 0;
+}
+
+header > div > p {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+header div {
+  color: white;
+}
+
+dialog.login-signup {
+  background-color: rgb(255, 255, 238);
+  border: 1px solid white;
+  color: rgb(49, 49, 49);
+  width: 275px;
+}
+
+dialog.login-signup a{
+  display: block;
+  margin: 5px 0;
+  cursor: pointer;
+  color: #013a50;
+}
+
+dialog.login-signup h1 {
+  margin: 0 30px;
+}
+
+dialog.login-signup form {
+  display: flex;
+  flex-direction: column;
+  align-content:stretch;
+  gap: 7.5px;
+}
+
+dialog.login-signup form label {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+dialog.login-signup form label input {
+  height: 1.5rem;
+  font-size: 1rem;
+  border: 1px solid black;
+}
+
+dialog.login-signup form input[type="submit"] {
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  height: auto;
+  color: white;
+  background-color: #016891;
+}
+
+dialog.login-signup form p {
+  margin: 0;
+  text-align: left;
+}
+
+dialog.login-signup form p.error {
+  font-size: 0.75rem;
+  color: rgb(133, 0, 0);
+}
+
+dialog.login-signup button.cancel {
+  width: 100%;
+  background-color: rgb(133, 0, 0);
+  color: white;
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  header {
+    
+    height: 3.5rem;
+  }
+
+  header > div > p {
+    font-size: 1rem;
+  }
+
+  
+
+}
+
+@media (max-width: 640px) {
+  header {
+    height: 3rem;
+  }
+
+  header img {
+    height: 3rem;
+  }
+
+  
+
+}
+
+@media (max-width: 420px) {
+
+  header > div > button.sign-out {
+    padding: 0;
+    align-self: stretch;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+  }
+
+  header > div {
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+}
